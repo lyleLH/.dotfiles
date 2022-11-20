@@ -1,9 +1,17 @@
 # .dotfiles
+
 my dotfile for neovim zsh omz and others
 
-i `~/.zshrc` file :
+```
+cd ~
 
-``` shell
+```
+
+then clone this repo
+
+in `~/.zshrc` file :
+
+```shell
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -16,4 +24,10 @@ if [ -r ~/.dotfiles/zsh/.zshrc ]; then
     source ~/.dotfiles/zsh/.zshrc
 fi
 
+```
+
+manuly install `oh-my-zsh` and 'powerlevel10k'
+
+```
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
