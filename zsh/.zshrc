@@ -108,13 +108,13 @@ z)
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
-export ZSH="$HOME/.config/oh-my-zsh"
+export ZSH="$HOME/.dotfiles/oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 source ~/.bash_profile
 # source ~/antigen.zsh
 # source ~/.config/.antigenrc
 
-
+export ZSH_CUSTOM="$HOME/.dotfiles/zsh-plugins-custom/custom"
 source $ZSH_CUSTOM/plugins/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH_CUSTOM/plugins/zsh-users/zsh-autosuggestions/zsh-autosuggestions.zsh
 #################################
