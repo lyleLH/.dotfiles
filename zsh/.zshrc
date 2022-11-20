@@ -188,8 +188,6 @@ export PTAH=/Users/imacn24/.cargo/bin:$PATH
 
 
 
-alias vim="nvim"
-alias myip="curl http://ipecho.net/plain; echo"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -202,3 +200,6 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH=/Users/imacn24/develop/flutter/bin:$PATH
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+
+source $HOME/.dotfiles/zsh/alias.zsh 
+
