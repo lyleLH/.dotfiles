@@ -1,18 +1,3 @@
-
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-
-ZSH_DISABLE_COMPFIX=true
-
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-
 ##############################
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -114,14 +99,14 @@ source ~/.bash_profile
 # source ~/antigen.zsh
 # source ~/.config/.antigenrc
 
-export ZSH_CUSTOM="$HOME/.config/zsh-plugins-custom/custom"
+
 source $ZSH_CUSTOM/plugins/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH_CUSTOM/plugins/zsh-users/zsh-autosuggestions/zsh-autosuggestions.zsh
 #################################
 
-# export GOKU_EDN_CONFIG_FILE="$HOME/.dotfiles/goku_config/karabiner.edn"
+# export GOKU_EDN_CONFIG_FILE="/Users/imacn24/goku_config/karabiner.edn"
 
-export GOKU_EDN_CONFIG_FILE="$HOME/.dotfiles/goku_config/karabiner.edn"
+export GOKU_EDN_CONFIG_FILE="/Users/imacn24/.config/goku_config/karabiner.edn"
 # export PATH=$JAVA_HOME/bin:$PATH
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-17.0.1.jdk/Contents/Home
 
@@ -188,6 +173,8 @@ export PTAH=/Users/imacn24/.cargo/bin:$PATH
 
 
 
+alias vim="nvim"
+alias myip="curl http://ipecho.net/plain; echo"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -200,6 +187,3 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH=/Users/imacn24/develop/flutter/bin:$PATH
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
-
-source $HOME/.config/zsh/alias.zsh 
-
