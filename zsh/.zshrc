@@ -82,7 +82,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-prompt 
+plugins=(git tmux git-prompt 
 z)
 
 # You may need to manually set your language environment
@@ -115,6 +115,7 @@ source ~/.bash_profile
 # source ~/.config/.antigenrc
 
 export ZSH_CUSTOM="$HOME/.config/zsh-plugins-custom/custom"
+export ZSH_TMUX_CONFIG="$HOME/.config/tmux/.tmux.conf"
 source $ZSH_CUSTOM/plugins/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH_CUSTOM/plugins/zsh-users/zsh-autosuggestions/zsh-autosuggestions.zsh
 #################################
