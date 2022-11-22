@@ -33,7 +33,7 @@ return packer.startup(function(use)
 
 	use("Shougo/deoplete.nvim")
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
-
+	use("ThePrimeagen/harpoon")
 	use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
 
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
@@ -48,7 +48,7 @@ return packer.startup(function(use)
 	use("numToStr/Comment.nvim")
 
 	-- file explorer
-	use("nvim-tree/nvim-tree.lua")
+	-- use("nvim-tree/nvim-tree.lua")
 
 	-- vs-code like icons
 	use("kyazdani42/nvim-web-devicons")
@@ -86,12 +86,12 @@ return packer.startup(function(use)
 	use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 
 	-- treesitter configuration
-	use({
-		"nvim-treesitter/nvim-treesitter",
-		run = function()
-			require("nvim-treesitter.install").update({ with_sync = true })
-		end,
-	})
+	-- use({
+	-- 	"nvim-treesitter/nvim-treesitter",
+	-- 	run = function()
+	-- 		require("nvim-treesitter.install").update({ with_sync = true })
+	-- 	end,
+	-- })
 
 	-- auto closing
 	use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...

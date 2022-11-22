@@ -8,6 +8,7 @@ local keymap = vim.keymap -- for conciseness
 -- General Keymaps
 ---------------------
 
+keymap.set("n", "<leader>pv", "<cmd>Ex<CR>")
 -- use jk to exit insert mode
 keymap.set("i", "jk", "<ESC>")
 
