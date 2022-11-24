@@ -122,7 +122,7 @@ source $ZSH_CUSTOM/plugins/zsh-users/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # export GOKU_EDN_CONFIG_FILE="$HOME/.dotfiles/goku_config/karabiner.edn"
 
-export GOKU_EDN_CONFIG_FILE="$HOME/.dotfiles/goku_config/karabiner.edn"
+export GOKU_EDN_CONFIG_FILE="$HOME/.config/goku_config/karabiner.edn"
 # export PATH=$JAVA_HOME/bin:$PATH
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-17.0.1.jdk/Contents/Home
 

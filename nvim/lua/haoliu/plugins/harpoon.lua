@@ -1,4 +1,4 @@
-local nnoremap = require("haoliu.keymap").nnoremap
+local nnoremap = require("haoliu.core.keymap").nnoremap
 
 print("from harpoon")
 local silent = { silent = true }

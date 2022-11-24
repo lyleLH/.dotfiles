@@ -85,7 +85,7 @@
         {:des   "w - launch mode"
          :rules [:w-mode
                  [:y [:open "/Applications/AppCode.app"]]
-                 [:u [:open "/Applications/Xcode.app"]]
+                 [:u [:open "/Applications/Xcode13.1/Xcode.app"]]
                  [:i [:open "/Applications/Visual Studio Code.app"]]
                  [:o [:open "/Applications/Sourcetree.app"]]
                  [:p [:open "/Applications/IntelliJ IDEA.app"]]
