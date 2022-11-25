@@ -106,7 +106,18 @@ return packer.startup(function(use)
 	use("preservim/vim-markdown")
 	use("akinsho/toggleterm.nvim")
 	use("folke/which-key.nvim")
+	-- markdown preview
+	-- install without yarn or npm
+	-- use({
+	-- 	"iamcco/markdown-preview.nvim",
+	-- 	run = function()
+	-- 		vim.fn["mkdp#util#install"]()
+	-- 	end,
+	-- })
 
+	use({
+		"iamcco/markdown-preview.nvim",
+	})
 	if packer_bootstrap then
 		require("packer").sync()
 	end

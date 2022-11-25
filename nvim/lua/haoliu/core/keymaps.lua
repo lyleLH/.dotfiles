@@ -68,3 +68,5 @@ keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current c
 -- vim.keymap.set("t", "<C-j>", [[<Cmd>wincmd j<CR>]], opts)
 -- vim.keymap.set("t", "<C-k>", [[<Cmd>wincmd k<CR>]], opts)
 -- vim.keymap.set("t", "<C-l>", [[<Cmd>wincmd l<CR>]], opts)
+
+keymap.set("n", "<leader>pr", "<cmd>MarkdownPreview<cr>") -- list current changes per file with diff preview ["gs" for git status]
