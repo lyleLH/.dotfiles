@@ -50,3 +50,10 @@ manuly install `oh-my-zsh` and 'powerlevel10k'
 ```
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
+
+### Zsh 的配置
+
+### Tmux 的配置
+
+brew install tmux
+ln -s ~/.config/tmux/.tmux.conf ~/.tmux.conf

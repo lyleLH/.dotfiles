@@ -14,29 +14,6 @@
         "basic.to_if_held_down_threshold_milliseconds" : 500
       },
       "rules" : [ {
-        "description" : "Auto generated layer conditions",
-        "manipulators" : [ {
-          "type" : "basic",
-          "to" : [ {
-            "set_variable" : {
-              "name" : "hyper-mode",
-              "value" : 1
-            }
-          } ],
-          "from" : {
-            "key_code" : "right_option"
-          },
-          "to_after_key_up" : [ {
-            "set_variable" : {
-              "name" : "hyper-mode",
-              "value" : 0
-            }
-          } ],
-          "to_if_alone" : [ {
-            "key_code" : "escape"
-          } ]
-        } ]
-      }, {
         "description" : "Shift Press Alone to change input source",
         "manipulators" : [ {
           "from" : {
@@ -135,6 +112,72 @@
             "bundle_identifiers" : [ "^com\\.google\\.Chrome$", "^com\\.brave\\.Browser$", "^org\\.mozilla\\.firefox$" ]
           } ],
           "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "j",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "escape"
+          }, {
+            "key_code" : "b"
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "^com\\.googlecode\\.iterm2$" ]
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "semicolon",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "escape"
+          }, {
+            "key_code" : "f"
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "^com\\.googlecode\\.iterm2$" ]
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "close_bracket",
+            "modifiers" : {
+              "mandatory" : [ "left_control", "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "close_bracket",
+            "modifiers" : [ "left_command", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "^com\\.googlecode\\.iterm2$" ]
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "open_bracket",
+            "modifiers" : {
+              "mandatory" : [ "left_control", "left_shift" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "open_bracket",
+            "modifiers" : [ "left_command", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_if",
+            "bundle_identifiers" : [ "^com\\.googlecode\\.iterm2$" ]
+          } ],
+          "type" : "basic"
         } ]
       }, {
         "description" : "w - launch mode",
@@ -188,7 +231,7 @@
             "key_code" : "u"
           },
           "to" : [ {
-            "shell_command" : "open \"/Applications/Xcode.app\""
+            "shell_command" : "open \"/Applications/Xcode13.1/Xcode.app\""
           } ],
           "conditions" : [ {
             "name" : "w-mode",
@@ -207,7 +250,7 @@
               "value" : 1
             }
           }, {
-            "shell_command" : "open \"/Applications/Xcode.app\""
+            "shell_command" : "open \"/Applications/Xcode13.1/Xcode.app\""
           } ],
           "from" : {
             "simultaneous" : [ {
@@ -1042,35 +1085,6 @@
             }
           }
         } ]
-      }, {
-        "description" : "hyper-launch mode",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "left_control"
-          },
-          "to" : [ {
-            "shell_command" : "osascript -e 'tell application \"Visual Studio Code\" to activate'"
-          } ],
-          "conditions" : [ {
-            "name" : "hyper-mode",
-            "value" : 1,
-            "type" : "variable_if"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "c"
-          },
-          "to" : [ {
-            "shell_command" : "open \"/Applications/Google Chrome.app\""
-          } ],
-          "conditions" : [ {
-            "name" : "hyper-mode",
-            "value" : 1,
-            "type" : "variable_if"
-          } ],
-          "type" : "basic"
-        } ]
       } ]
     },
     "devices" : [ {
@@ -1172,45 +1186,6 @@
         "is_pointing_device" : true,
         "product_id" : 835,
         "vendor_id" : 1452
-      },
-      "ignore" : true,
-      "manipulate_caps_lock_led" : false,
-      "simple_modifications" : [ ],
-      "treat_as_built_in_keyboard" : false
-    }, {
-      "disable_built_in_keyboard_if_exists" : false,
-      "fn_function_keys" : [ ],
-      "identifiers" : {
-        "is_keyboard" : false,
-        "is_pointing_device" : true,
-        "product_id" : 45095,
-        "vendor_id" : 1133
-      },
-      "ignore" : true,
-      "manipulate_caps_lock_led" : false,
-      "simple_modifications" : [ ],
-      "treat_as_built_in_keyboard" : false
-    }, {
-      "disable_built_in_keyboard_if_exists" : false,
-      "fn_function_keys" : [ ],
-      "identifiers" : {
-        "is_keyboard" : true,
-        "is_pointing_device" : false,
-        "product_id" : 647,
-        "vendor_id" : 64562
-      },
-      "ignore" : false,
-      "manipulate_caps_lock_led" : true,
-      "simple_modifications" : [ ],
-      "treat_as_built_in_keyboard" : false
-    }, {
-      "disable_built_in_keyboard_if_exists" : false,
-      "fn_function_keys" : [ ],
-      "identifiers" : {
-        "is_keyboard" : false,
-        "is_pointing_device" : true,
-        "product_id" : 647,
-        "vendor_id" : 64562
       },
       "ignore" : true,
       "manipulate_caps_lock_led" : false,

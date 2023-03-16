@@ -82,7 +82,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux git-prompt 
+plugins=(git git-prompt 
 z)
 
 # You may need to manually set your language environment
@@ -114,8 +114,7 @@ source ~/.bash_profile
 # source ~/antigen.zsh
 # source ~/.config/.antigenrc
 
-export ZSH_CUSTOM="$HOME/.config/zsh-plugins-custom/custom"
-export ZSH_TMUX_CONFIG="$HOME/.config/tmux/.tmux.conf"
+
 source $ZSH_CUSTOM/plugins/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH_CUSTOM/plugins/zsh-users/zsh-autosuggestions/zsh-autosuggestions.zsh
 #################################
@@ -126,7 +125,7 @@ export GOKU_EDN_CONFIG_FILE="$HOME/.config/goku_config/karabiner.edn"
 # export PATH=$JAVA_HOME/bin:$PATH
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-17.0.1.jdk/Contents/Home
 
-export M2_HOME=/Users/imacn24/apache-maven-3.8.5 
+export M2_HOME=/Users/tom.liu/apache-maven-3.8.5 
 export PATH=$PATH:$M2_HOME/bin
 # export JAVA_HOME=$(/usr/libexec/java_home) 
 
@@ -180,12 +179,12 @@ function proxy_off(){
 
 . /usr/local/opt/asdf/libexec/asdf.sh
 
-export PATH=/Users/imacn24/Documents/vimr/build/Build/Products/Release/VimR.app/Contents/MacOS:$PATH
+export PATH=/Users/tom.liu/Documents/vimr/build/Build/Products/Release/VimR.app/Contents/MacOS:$PATH
 
 
-export PATH=/Users/imacn24/.local/bin:$PATH
+export PATH=/Users/tom.liu/.local/bin:$PATH
 
-export PTAH=/Users/imacn24/.cargo/bin:$PATH
+export PTAH=/Users/tom.liu/.cargo/bin:$PATH
 
 
 
@@ -198,7 +197,7 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 # HomeBrew END
 
-export PATH=/Users/imacn24/develop/flutter/bin:$PATH
+export PATH=/Users/tom.liu/flutter/bin:$PATH
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 

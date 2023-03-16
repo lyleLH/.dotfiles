@@ -12,7 +12,7 @@ require("haoliu.plugins.lsp.lspsaga")
 require("haoliu.plugins.lsp.lspconfig")
 require("haoliu.plugins.lsp.null-ls")
 require("haoliu.plugins.autopairs")
--- require("haoliu.plugins.treesitter")
+require("haoliu.plugins.treesitter")
 require("haoliu.plugins.gitsigns")
 require("haoliu.plugins.toggleterm")
 

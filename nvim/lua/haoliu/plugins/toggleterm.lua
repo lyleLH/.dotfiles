@@ -4,7 +4,7 @@ if not status_ok then
 end
 toggleterm.setup({
 	size = 10,
-	open_mapping = [[<c-'>]],
+	open_mapping = [[<c-\>]],
 	shading_factor = 2,
 	direction = "tab",
 	float_opts = {
