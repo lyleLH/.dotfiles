@@ -13,7 +13,7 @@ local packer_bootstrap = ensure_packer() -- true if packer was just installed
 
 -- autocommand that reloads neovim and installs/updates/removes plugins
 -- when file is saved
-vim.cmd([[ 
+vim.cmd([[
   augroup packer_user_config
     autocmd!
     autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
@@ -25,7 +25,6 @@ local status, packer = pcall(require, "packer")
 if not status then
 	return
 end
-
 -- add list of plugins to install
 return packer.startup(function(use)
 	-- packer can manage itself
@@ -34,6 +33,17 @@ return packer.startup(function(use)
 	use("Shougo/deoplete.nvim")
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 	use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
+
+	use({ "bluz71/vim-moonfly-colors", as = "moonfly" })
+	use("savq/melange-nvim")
+	use("morhetz/gruvbox")
+	use({
+		"goolord/alpha-nvim",
+		requires = { "nvim-tree/nvim-web-devicons" },
+		config = function()
+			require("alpha").setup(require("alpha.themes.startify").config)
+		end,
+	})
 
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
@@ -45,6 +55,21 @@ return packer.startup(function(use)
 	-- use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
 	use("vim-scripts/ReplaceWithRegister") -- replace with register contents using motion (gr + motion)
 
+	use("pangloss/vim-javascript")
+	use("mxw/vim-jsx")
+
+	use("lukas-reineke/indent-blankline.nvim")
+	vim.opt.list = true
+	vim.opt.listchars:append("space:⋅")
+	vim.opt.listchars:append("eol:↴")
+
+	require("indent_blankline").setup({
+		space_char_blankline = " ",
+		show_current_context = true,
+		show_current_context_start = true,
+	})
+
+	use("mbbill/undotree")
 	-- commenting with gc
 	use("numToStr/Comment.nvim")
 
@@ -59,8 +84,19 @@ return packer.startup(function(use)
 
 	-- fuzzy finding w/ telescope
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
-	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
-
+	-- use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
+	use({
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.1",
+		-- or                            , branch = '0.1.x',
+		requires = {
+			{ "nvim-lua/plenary.nvim" },
+			{ "nvim-telescope/telescope-live-grep-args.nvim" },
+		},
+		config = function()
+			require("telescope").load_extension("live_grep_args")
+		end,
+	})
 	-- autocompletion
 	use("hrsh7th/nvim-cmp") -- completion plugin
 	use("hrsh7th/cmp-buffer") -- source for text in buffer
@@ -80,6 +116,18 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
 
 	use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
+	use({
+		"folke/trouble.nvim",
+		requires = "nvim-tree/nvim-web-devicons",
+		config = function()
+			require("trouble").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	})
+	-- use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
 
 	use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
 	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
@@ -89,12 +137,6 @@ return packer.startup(function(use)
 	use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 
 	-- treesitter configuration
-	-- use({
-	-- 	"nvim-treesitter/nvim-treesitter",
-	-- 	run = function()
-	-- 		require("nvim-treesitter.install").update({ with_sync = true })
-	-- 	end,
-	-- })
 	use("nvim-treesitter/nvim-treesitter")
 	-- auto closing
 	use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
@@ -102,12 +144,24 @@ return packer.startup(function(use)
 
 	-- git integration
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
-
+	use("tpope/vim-fugitive")
 	use("godlygeek/tabular")
 
 	use("preservim/vim-markdown")
 	use("akinsho/toggleterm.nvim")
 	use("folke/which-key.nvim")
+
+	use({
+		"phaazon/hop.nvim",
+		branch = "v2", -- optional but strongly recommended
+		config = function()
+			-- you can configure Hop the way you like here; see :h hop-config
+			require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
+		end,
+	})
+	use({
+		"gelguy/wilder.nvim",
+	})
 	-- markdown preview
 	-- install without yarn or npm
 	-- use({
@@ -116,7 +170,7 @@ return packer.startup(function(use)
 	-- 		vim.fn["mkdp#util#install"]()
 	-- 	end,
 	-- })
-
+	use("iqxd/vim-mine-sweeping")
 	use({
 		"iamcco/markdown-preview.nvim",
 	})
