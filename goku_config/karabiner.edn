@@ -81,6 +81,8 @@
         {:des "Change right_option to 4 modifiers combination, f17 when used alone"
          :rules [[:right_option :!COTright_shift nil {:alone [:f17]}]]}
 
+
+
         {:des "app"
          :rules [[:!To :!Cl                     [:browsers]]
                  [:!Tcomma :!Cleft_arrow        [:browsers]]
