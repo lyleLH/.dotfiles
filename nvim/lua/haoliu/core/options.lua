@@ -1,5 +1,4 @@
 local opt = vim.opt -- for conciseness
-
 opt.guicursor = ""
 -- line numbers
 opt.relativenumber = true -- show relative line numbers
@@ -24,8 +23,13 @@ opt.smartindent = true
 -- cursor line
 opt.cursorline = true -- highlight the current cursor line
 
--- appearance
+opt.guifont = { "CaskaydiaCover Nerd Font", ":h20" }
 
+-- opt.guifont = "Cascadia Code:h13"
+
+-- opt.guifont = { "Fira Code Font", ":h20" }
+
+-- appearance
 -- turn on termguicolors for nightfly colorscheme to work
 -- (have to use iterm2 or any other true color terminal)
 opt.termguicolors = true

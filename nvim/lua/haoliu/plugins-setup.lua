@@ -33,10 +33,15 @@ return packer.startup(function(use)
 	use("Shougo/deoplete.nvim")
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 	use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
-
+	use("folke/tokyonight.nvim")
+	use("aoeivux/base46.nvim")
+	use("EdenEast/nightfox.nvim") -- Packer
 	use({ "bluz71/vim-moonfly-colors", as = "moonfly" })
 	use("savq/melange-nvim")
 	use("morhetz/gruvbox")
+	-- Using Packer
+	use("navarasu/onedark.nvim")
+	use("rafamadriz/neon")
 	use({
 		"goolord/alpha-nvim",
 		requires = { "nvim-tree/nvim-web-devicons" },
@@ -60,7 +65,7 @@ return packer.startup(function(use)
 
 	use("lukas-reineke/indent-blankline.nvim")
 	vim.opt.list = true
-	vim.opt.listchars:append("space:⋅")
+	-- vim.opt.listchars:append("space:⋅")
 	vim.opt.listchars:append("eol:↴")
 
 	require("indent_blankline").setup({
@@ -113,6 +118,7 @@ return packer.startup(function(use)
 
 	-- configuring lsp servers
 	use("neovim/nvim-lspconfig") -- easily configure language servers
+
 	use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
 
 	use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
@@ -162,18 +168,18 @@ return packer.startup(function(use)
 	use({
 		"gelguy/wilder.nvim",
 	})
+
 	-- markdown preview
 	-- install without yarn or npm
-	-- use({
-	-- 	"iamcco/markdown-preview.nvim",
-	-- 	run = function()
-	-- 		vim.fn["mkdp#util#install"]()
-	-- 	end,
-	-- })
-	use("iqxd/vim-mine-sweeping")
 	use({
 		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
 	})
+
+	use("iqxd/vim-mine-sweeping")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
