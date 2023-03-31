@@ -195,7 +195,11 @@ export PTAH=/Users/tom.liu/.cargo/bin:$PATH
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+
+
+export PATH="/opt/homebrew/bin:$PATH"
 # HomeBrew END
+
 
 export PATH=/Users/tom.liu/flutter/bin:$PATH
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"

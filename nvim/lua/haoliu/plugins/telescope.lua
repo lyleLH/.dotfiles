@@ -4,37 +4,56 @@ local previewers = require("telescope.previewers")
 local action_state = require("telescope.actions.state")
 local conf = require("telescope.config").values
 local actions = require("telescope.actions")
+local lga_actions = require("telescope-live-grep-args.actions")
 
+local trouble = require("trouble.providers.telescope")
 require("telescope").setup({
 	defaults = {
-		file_sorter = require("telescope.sorters").get_fzy_sorter,
 		prompt_prefix = " >",
 		color_devicons = true,
-
+		theme = "ivy",
 		file_previewer = require("telescope.previewers").vim_buffer_cat.new,
 		grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
 		qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
-
 		mappings = {
 			i = {
+				["<c-t>"] = trouble.open_with_trouble,
 				["<C-x>"] = false,
 				["<C-q>"] = actions.send_to_qflist,
 				["<CR>"] = actions.select_default,
 			},
+			n = {
+				["<c-t>"] = trouble.open_with_trouble,
+			},
 		},
 	},
-	--[[
 	extensions = {
-		fzy_native = {
-			override_generic_sorter = false,
-			override_file_sorter = true,
+		fzf = {
+			fuzzy = true, -- false will only do exact matching
+			override_generic_sorter = true, -- override the generic sorter
+			override_file_sorter = true, -- override the file sorter
+			case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+			-- the default case_mode is "smart_case"
+		},
+		live_grep_args = {
+			auto_quoting = true, -- enable/disable auto-quoting
+			-- define mappings, e.g.
+			mappings = {
+				-- extend mappings
+				i = {
+					["<C-k>"] = lga_actions.quote_prompt(),
+					["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+				},
+			},
+			-- ... also accepts theme settings, for example:
+			-- theme = "dropdown", -- use dropdown theme
+			-- theme = { }, -- use own theme spec
+			-- layout_config = { mirror=true }, -- mirror preview pane
 		},
 	},
-    ]]
 })
 
 require("telescope").load_extension("git_worktree")
--- require("telescope").load_extension("fzy_native")
 
 local M = {}
 
@@ -84,7 +103,6 @@ local function image_selector(prompt, cwd)
 		require("telescope.builtin").find_files({
 			prompt_title = prompt,
 			cwd = cwd,
-
 			attach_mappings = function(prompt_bufnr, map)
 				print("help me ???")
 				select_background(prompt_bufnr, map)
@@ -231,7 +249,7 @@ end
 local Remap = require("haoliu.core.keymap")
 local nnoremap = Remap.nnoremap
 
-nnoremap("<C-p>", ":Telescope")
+-- nnoremap("<C-p>", ":Telescope")
 nnoremap("<leader>ps", function()
 	require("telescope.builtin").grep_string({ search = vim.fn.input("Grep For > ") })
 end)
@@ -248,56 +266,10 @@ end)
 nnoremap("<leader>pb", function()
 	require("telescope.builtin").buffers()
 end)
-nnoremap("<leaer>vh", function()
+nnoremap("<leaer>ph", function()
 	require("telescope.builtin").help_tags()
 end)
 
 nnoremap("<leader>frc", function()
 	M.search_dotfiles({ hidden = true })
 end)
-nnoremap("<leader>gc", function()
-	M.git_branches()
-end)
-nnoremap("<leader>gw", function()
-	require("telescope").extensions.git_worktree.git_worktrees()
-end)
-nnoremap("<leader>gm", function()
-	require("telescope").extensions.git_worktree.create_git_worktree()
-end)
-
--- -- import telescope plugin safely
--- local telescope_setup, telescope = pcall(require, "telescope")
--- if not telescope_setup then
--- 	return
--- end
---
--- -- import telescope actions safely
--- local actions_setup, actions = pcall(require, "telescope.actions")
--- if not actions_setup then
--- 	return
--- end
---
--- -- configure telescope
--- telescope.setup({
--- 	-- configure custom mappings
--- 	defaults = {
--- 		mappings = {
--- 			i = {
--- 				["<C-p>"] = actions.move_selection_previous, -- move to prev result
--- 				["<C-n>"] = actions.move_selection_next, -- move to next result
--- 				["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist, -- send selected to quickfixlist
--- 			},
--- 		},
--- 	},
--- 	extensions = {
--- 		fzf = {
--- 			fuzzy = true, -- false will only do exact matching
--- 			override_generic_sorter = true, -- override the generic sorter
--- 			override_file_sorter = true, -- override the file sorter
--- 			case_mode = "smart_case", -- or "ignore_case" or "respect_case"
--- 			-- the default case_mode is "smart_case"
--- 		},
--- 	},
--- })
---
--- telescope.load_extension("fzf")

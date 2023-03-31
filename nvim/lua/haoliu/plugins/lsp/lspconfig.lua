@@ -90,7 +90,6 @@ lspconfig["emmet_ls"].setup({
 })
 
 -- configure lua server (with special settings)
---lspconfig["sumneko_lua"].setup({
 lspconfig["lua_ls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
@@ -117,8 +116,10 @@ lspconfig["ruby_ls"].setup({
 	on_attach = on_attach,
 	filetypes = { "ruby" },
 })
+require("lspconfig").dartls.setup({})
 
 -- configure swift language server
+require("lspconfig").sourcekit.setup({})
 lspconfig["sourcekit"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,

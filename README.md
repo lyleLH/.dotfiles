@@ -2,12 +2,24 @@
 
 my dotfile for neovim zsh omz and others
 
-```
-cd ~
+### nvim
+
+** m1 chip Mac **
+
+```shell
+arch -arm64 brew install neovim
 
 ```
 
-then clone this repo
+** m1 chip Mac **
+
+- 使用系统自带的终端 进入 nvim 目录，等待 Packer 下载和编译好插件
+
+- 等待 Treesitter 下载好 parser 并且编译好
+
+then clone this repo to ‘~/.config/’
+
+### zsh
 
 in `~/.zshrc` file :
 
@@ -51,9 +63,10 @@ manuly install `oh-my-zsh` and 'powerlevel10k'
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
-### Zsh 的配置
-
-### Tmux 的配置
+### tmux
 
 brew install tmux
+
 ln -s ~/.config/tmux/.tmux.conf ~/.tmux.conf
+
+### kitty
