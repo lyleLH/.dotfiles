@@ -95,29 +95,28 @@
         {:des   "w - launch mode"
          :rules [:w-mode
                  [:y [:open-path "/Applications/AppCode.app"]]
-                 [:u [:open-path "/Applications/Xcode.app"]]
                  [:i [:open-path  "/Applications/Visual Studio Code.app"]]
-                 [:o [:open-path  "/Applications/Sourcetree.app"]]
                  [:p [:open-path  "/Applications/IntelliJ IDEA.app"]]
-                 [:h [:open-path  "/Applications/RubyMine.app"]]
                  [:j [:open-path  "/Applications/Sublime Text.app"]]
                  [:k [:open-path  "/Applications/MWeb.app"]]
                  [:l [:open-path  "/Applications/GitHub Desktop.app"]]
-                 [:n [:open-path  "/Applications/Timer.app"]]]}
+                 [:n [:open-path  "/Applications/Talky.app/"]]]}
 
         {:des   "o-launch mode"
          :rules [:o-mode
                  [:q [:open-path  "/System/Applications/Notes.app"]]
                  [:w [:open-path  "/Applications/WeChat.app"]]
-                 [:e [:open-path  "/Applications/企业微信.app"]]
-                ;;  [:r [:open "/Applications/WhatsApp.app"]]
-                 [:t [:open-path  "/Applications/Telegram.app"]] 
-                 [:a [:open-path  "/Applications/Notion.app"]]
-                 [:s [:open-path  "/Applications/Spotify.app"]] 
+                 [:e [:open-path  "/Applications/Slack.app"]]
+                 [:r [:open "/Applications/Safari.app/"]]
+                 [:t [:open-path  "/Applications/Talky.app/"]] 
+                 [:a [:open-path  "/Applications/Asana.app/"]]
+                 [:s [:open-path  "/Applications/Safari.app/"]] 
                  [:d [:open-path  "/Applications/Obsidian.app"]]
                  [:f [:open-path  "/Applications/Firefox.app"]]
                  [:g [:open-path  "/System/Library/CoreServices/Finder.app"]]
                  [:c [:open-path  "/Applications/Google Chrome.app"]]
+                 [:x [:open-path "/Applications/Xcode.app"]]
+                 [:z [:open-path  "/Applications/GitHub Desktop.app"]]
                  ]} 
 {:des   "hyper-launch mode"
          :rules [:hyper-mode

@@ -156,7 +156,20 @@ return packer.startup(function(use)
 	use("preservim/vim-markdown")
 	use("akinsho/toggleterm.nvim")
 	use("folke/which-key.nvim")
+	-- Lua
+	-- TODO:
 
+	use({
+		"folke/todo-comments.nvim",
+		requires = "nvim-lua/plenary.nvim",
+		config = function()
+			require("todo-comments").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	})
 	use({
 		"phaazon/hop.nvim",
 		branch = "v2", -- optional but strongly recommended

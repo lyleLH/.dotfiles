@@ -43,7 +43,7 @@ if vim.g.neovide then
 	vim.g.neovide_padding_bottom = 20
 	vim.g.neovide_padding_right = 20
 	vim.g.neovide_padding_left = 20
-	vim.g.neovide_fullscreen = true
+	-- vim.g.neovide_fullscreen = true
 	-- Helper function for transparency formatting
 	-- local alpha = function()
 	-- 	return string.format("%x", math.floor(255 * vim.g.transparency or 0.8))
@@ -65,4 +65,10 @@ if vim.g.vscode then
 	-- VSCode extension
 	-- vim.opt.guifont = { "CaskaydiaCove Nerd Font", ":h18" }
 	vim.opt.guifont = { "Fira Code", ":h15" }
+end
+
+if vim.g.vimr then
+	-- VSCode extension
+	-- vim.opt.guifont = { "CaskaydiaCove Nerd Font", ":h18" }
+	vim.opt.guifont = { "BlexMono Nerd Font Mono", ":h16" }
 end

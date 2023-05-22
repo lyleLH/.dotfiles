@@ -1,4 +1,7 @@
+local util = require("lspconfig.util")
+
 -- import lspconfig plugin safely
+
 local lspconfig_status, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status then
 	return
@@ -93,7 +96,8 @@ lspconfig["emmet_ls"].setup({
 lspconfig["lua_ls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
-	settings = { -- custom settings for lua
+	settings = {
+		-- custom settings for lua
 		Lua = {
 			-- make the language server recognize "vim" global
 			diagnostics = {
@@ -115,6 +119,18 @@ lspconfig["ruby_ls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	filetypes = { "ruby" },
+	cmd = { "ruby" },
+	init_options = {
+		enabledFeatures = {
+			"codeActions",
+			"diagnostics",
+			"documentHighlights",
+			"documentSymbols",
+			"formatting",
+			"inlayHint",
+		},
+	},
+	root_dir = util.root_pattern("Gemfile", ".git"),
 })
 require("lspconfig").dartls.setup({})
 
@@ -124,4 +140,5 @@ lspconfig["sourcekit"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	filetypes = { "swift", "c", "cpp", "objective-c", "objective-cpp" },
+	root_dir = util.root_pattern("Package.swift", ".git"),
 })

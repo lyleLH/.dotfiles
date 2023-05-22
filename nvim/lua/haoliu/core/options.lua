@@ -48,3 +48,5 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 opt.iskeyword:append("-") -- consider string-string as whole word
 opt.cmdheight = 1
+
+opt.winbar = "%=%m %f"
