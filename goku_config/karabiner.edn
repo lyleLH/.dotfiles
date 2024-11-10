@@ -68,8 +68,15 @@
                 :unix-like ["^com\\.apple\\.Terminal$" "^com\\.googlecode\\.iterm2$" "^org\\.gnu\\.Emacs$" "^org\\.vim\\.MacVim$"]
                 :all-terminals ["^com\\.apple\\.Terminal$" "^com\\.googlecode\\.iterm2$"]}
 
- :main [{:des "Shift Press Alone to change input source"
+ :main [
+        {:des "Shift Press Alone to change input source"
          :rules [[:right_command :right_control nil]]}
+
+        {:des "XXXXX"
+         :rules [[:f16 :!COTright_shift nil]]}
+
+        {:des "XXXXXxxx"
+         :rules [[:f17 :!Cleft_control nil]]}
 
         {:des "Shift Press Alone to change input source"
          :rules [[:right_shift :right_option nil {:alone :!Qspacebar}]]}
@@ -78,8 +85,8 @@
          :rules [[:caps_lock :right_control nil]]}
 
 
-        {:des "Change right_option to 4 modifiers combination, f17 when used alone"
-         :rules [[:right_option :!COTright_shift nil {:alone [:f17]}]]}
+        {:des "Change right_option to 4 modifiers combination, f19 when used alone"
+         :rules [[:right_option :!COTright_shift nil {:alone [:f18]}]]}
 
 
 
