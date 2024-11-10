@@ -11,14 +11,9 @@
   ],
   "contributors": [
     "FezVrasta",
-    "ickas",
+    "henrique",
     "metakirby5",
-    "AlanHuang",
-    "nirtamir2",
-    "pernielsentikaer",
-    "rasitayaz",
-    "popalay",
-    "litomore"
+    "AlanHuang"
   ],
   "license": "MIT",
   "commands": [
@@ -35,22 +30,14 @@
       "subtitle": "Google Translate",
       "description": "Simple translation via Google Translate",
       "mode": "view"
-    },
-    {
-      "name": "quick-translate",
-      "title": "Quick Translate",
-      "subtitle": "Google Translate",
-      "description": "Quickly translate to multiple languages",
-      "mode": "view"
     }
   ],
   "preferences": [
     {
       "name": "lang1",
-      "title": "Primary Language",
-      "description": "Preferred language to translate from",
-      "required": true,
       "type": "dropdown",
+      "required": true,
+      "title": "First Language",
       "default": "auto",
       "data": [
         {
@@ -110,11 +97,11 @@
           "value": "ceb"
         },
         {
-          "title": "Chinese (Simplified)",
+          "title": "🇨🇳 Chinese Simplified",
           "value": "zh-CN"
         },
         {
-          "title": "Chinese (Traditional)",
+          "title": "🇹🇼 Taiwanese Mandarin",
           "value": "zh-TW"
         },
         {
@@ -195,7 +182,7 @@
         },
         {
           "title": "🇮🇱 Hebrew",
-          "value": "iw"
+          "value": "he"
         },
         {
           "title": "🇮🇳 Hindi",
@@ -489,14 +476,13 @@
           "title": "Zulu",
           "value": "zu"
         }
-      ]
+      ],
+      "description": "First language"
     },
     {
       "name": "lang2",
-      "title": "Secondary Language",
-      "description": "Preferred language to translate to",
-      "required": true,
       "type": "dropdown",
+      "required": true,
       "default": "de",
       "data": [
         {
@@ -552,11 +538,11 @@
           "value": "ceb"
         },
         {
-          "title": "Chinese (Simplified)",
+          "title": "🇨🇳 Chinese Simplified",
           "value": "zh-CN"
         },
         {
-          "title": "Chinese (Tranditional)",
+          "title": "🇹🇼 Taiwanese Mandarin",
           "value": "zh-TW"
         },
         {
@@ -637,7 +623,7 @@
         },
         {
           "title": "🇮🇱 Hebrew",
-          "value": "iw"
+          "value": "he"
         },
         {
           "title": "🇮🇳 Hindi",
@@ -714,10 +700,6 @@
         {
           "title": "🇱🇻 Latvian",
           "value": "lv"
-        },
-        {
-          "title": "🏛 Latin",
-          "value": "la"
         },
         {
           "title": "🇱🇹 Lithuanian",
@@ -935,41 +917,17 @@
           "title": "Zulu",
           "value": "zu"
         }
-      ]
-    },
-    {
-      "name": "autoInput",
-      "title": "Autofill Input",
-      "label": "Automatically fill input with selected text.",
-      "description": "When enabled, selected text from the foremost app will be automatically filled in the input field.",
-      "required": false,
-      "type": "checkbox",
-      "default": true
-    },
-    {
-      "name": "defaultAction",
-      "title": "Default Action",
-      "description": "The default action to take when translating.",
-      "type": "dropdown",
-      "required": false,
-      "default": "copy",
-      "data": [
-        {
-          "title": "Copy to Clipboard",
-          "value": "copy"
-        },
-        {
-          "title": "Paste to App",
-          "value": "paste"
-        }
-      ]
+      ],
+      "title": "Second Language",
+      "description": "Second language"
     }
   ],
   "dependencies": {
-    "@iamtraction/google-translate": "^2.0.1",
     "@raycast/api": "^1.47.3",
     "@raycast/utils": "^1.4.16",
-    "google-tts-api": "^2.0.2"
+    "@types/debounce": "^1.2.1",
+    "@vitalets/google-translate-api": "^7.0.0",
+    "debounce": "^1.2.1"
   },
   "devDependencies": {
     "@types/node": "~16.10.0",
@@ -978,7 +936,6 @@
     "@typescript-eslint/parser": "^5.0.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
-    "prettier": "^3.0.1",
     "typescript": "^4.4.3"
   },
   "scripts": {

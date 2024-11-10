@@ -2,7 +2,7 @@
 # alias vim="nvim"
 alias nv="nvim"
 # alias vide="neovide --frame none"
-alias lc='colorls -lA --sd'
+
 alias vv="/Applications/Neovide.app/Contents/MacOS/neovide"
 alias vimr="~/vimr"
 alias myip="curl http://ipecho.net/plain; echo"
@@ -13,8 +13,8 @@ alias showxcodepath="xcode-select -p"
 
 alias xvim="vi ~/.xvimrc"
 
-alias keyboard="nv ~/.config/goku_config/karabiner.edn"
-alias vimkeys="nv ~/.config/nvim/lua/haoliu/core/keymaps.lua"
+alias keyboard="vi ~/.config/goku_config/karabiner.edn"
+alias vimkeys="vi ~/.config/nvim/lua/haoliu/core/keymaps.lua"
 
 alias ivim="nv ~/.ideavimrc"
 
